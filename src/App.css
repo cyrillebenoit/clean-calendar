@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Raleway:wght@100;200;400;700;900&family=Source+Sans+Pro:wght@200;400&display=swap');
+
+.container {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.year-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1rem 0 3rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.calendar {
+    border-collapse: collapse;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.no-padding {
+    padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.left-columns {
+    padding-right: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.day-head {
+    padding: 0 60px 2px 0;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+}
+
+.day-cell {
+    font-family: 'Comforter', cursive;
+    padding: 0;
+    text-align: left;
+}
+
+.month-cell {
+    display: flex;
+    align-items: flex-start;
+    font-weight: normal;
+    padding: 0 0 5px 25px;
+    margin: 5px 0 15px 0;
+    border-top: 1px black solid;
+    text-align: right;
+}
+
+.quarter-cell {
+    display: flex;
+    font-weight: lighter;
+    align-items: flex-start;
+    padding: 0 0 0 25px;
+    margin: 5px 0 20px 0;
+    border-top: 1px black solid;
+    text-align: right;
+}
+
+.day {
+    margin: 5px 0 24px 0;
+    padding-right: 35px;
+    padding-bottom: 1px;
+}
+
+.grey {
+    opacity: 0.5;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.highlight {
+    border-bottom: 1px black solid;
 }
