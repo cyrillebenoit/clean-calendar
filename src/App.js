@@ -41,7 +41,7 @@ function MonthBox({month}) {
 }
 
 function App() {
-    const year = 2022;
+    const year = 2023;
     const days = getYearDays(year);
     const rows = [];
 
@@ -50,7 +50,7 @@ function App() {
     let row = [];
 
     // first day offset
-    for (let j = days[0].getDay() - 1; j > 0; j--) {
+    for (let j = (days[0].getDay() + 7 - 1) % 7; j > 0; j--) {
         const movingDate = new Date(days[0])
         movingDate.setDate(movingDate.getDate() - j)
         row.push(movingDate)
@@ -112,7 +112,7 @@ function App() {
                     return <tr className={'calendar-row'} key={i}>
                         <td className={'no-padding'}>{newQuarter && <QuarterBox quarter={Math.floor(number)}/>}</td>
                         <td className={'no-padding left-columns'}>{newMonth &&
-                        <MonthBox month={month.getMonth()}/>}</td>
+                            <MonthBox month={month.getMonth()}/>}</td>
                         {
                             r.map((d, j) => <td className={'day-cell'} key={j}><DayBox highlight={d.getDate() === 1}
                                                                                        invisible={d.getFullYear() !== year}
